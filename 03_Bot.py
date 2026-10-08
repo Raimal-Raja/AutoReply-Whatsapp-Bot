@@ -9,23 +9,15 @@ from openai import OpenAI
 
 
 
-client = OpenAI(
-  api_key="Your OpenAI API Key",
-)
+client = OpenAI()
 
-def is_last_message_from_sender(chat_log, sender_name="Thy Professor Gb"):
-    # Split the chat log into individual messages
-    messages = chat_log.strip().split("/2024] ")[-1]
-    if sender_name in messages:
-        return True 
-    return False
-    
-    
+from chat_utils import is_last_message_from_sender
 
     # Step 1: Click on the chrome icon at coordinates (1639, 1412)
 pyautogui.click(1400, 1044)
 
 time.sleep(1)  # Wait for 1 second to ensure the click is registered
+last_processed_chat = None
 while True:
     time.sleep(5)
     # Step 2: Drag the mouse from (1003, 237) to (2187, 1258) to select the text
@@ -43,7 +35,7 @@ while True:
     # Print the copied text to verify
     print(chat_history)
     print(is_last_message_from_sender(chat_history))
-    if is_last_message_from_sender(chat_history):
+    if is_last_message_from_sender(chat_history) and chat_history != last_processed_chat:
         completion = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
@@ -66,3 +58,4 @@ while True:
 
         # Step 7: Press Enter
         pyautogui.press('enter')
+        last_processed_chat = chat_history

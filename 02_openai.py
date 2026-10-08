@@ -1,10 +1,8 @@
 from openai import OpenAI
- 
-# pip install openai 
+
+# pip install openai
 # if you saved the key under a different environment variable name, you can do something like:
-client = OpenAI(
-  api_key="Your OpenAI API Key",
-)
+client = OpenAI()
 
 command = '''[9:25 AM, 8/18/2024] Thy_Professor: Bhai sun
 [9:25 AM, 8/18/2024] Thy_Professor: Smo main chalna hai na
