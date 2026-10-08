@@ -2,14 +2,13 @@
 
 Python desktop automation prototype that reads WhatsApp Web chats and generates replies through OpenAI.
 
-## Repository guide
+## Setup and repository reference
 
-### Contents
+### Project structure
 
 - [01_getcursor.py](01_getcursor.py)
 - [02_openai.py](02_openai.py)
 - [03_Bot.py](03_Bot.py)
-- [README.md](README.md)
 - [requirements.txt](requirements.txt)
 - [tests](tests)
 
@@ -47,11 +46,15 @@ Requires a desktop session, calibrated screen coordinates, a selected chat, and 
 
 ### Validation
 
-Reviewed on 2026-10-08. Three transcript-parser regression tests passed. Python source syntax checks passed. Live desktop automation and message delivery were not exercised.
+Audit: 2026-10-08. Repository structure, setup instructions and description were reviewed. 5 existing Python files passed syntax checks; changed files and new regression tests were checked separately. 3 regression tests passed. Syntax checks do not establish full runtime correctness. External APIs, live scraping, GUI interaction, notebook training and production deployment were not comprehensively exercised.
 
 ```bash
 python -m unittest discover -s tests -v
 ```
+
+### Repository description
+
+The short GitHub description is provided in [REPOSITORY_DESCRIPTION.md](REPOSITORY_DESCRIPTION.md).
 
 ### Contributions
 
