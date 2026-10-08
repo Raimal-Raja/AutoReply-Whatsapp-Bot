@@ -46,15 +46,11 @@ Requires a desktop session, calibrated screen coordinates, a selected chat, and 
 
 ### Validation
 
-Audit: 2026-10-08. Repository structure, setup instructions and description were reviewed. 5 existing Python files passed syntax checks; changed files and new regression tests were checked separately. 3 regression tests passed. Syntax checks do not establish full runtime correctness. External APIs, live scraping, GUI interaction, notebook training and production deployment were not comprehensively exercised.
+Recorded checks from the previous maintenance review (2026-10-08): 5 existing Python files passed syntax checks; changed files and new regression tests were checked separately. 3 regression tests passed. Syntax checks do not establish full runtime correctness. External APIs, live scraping, GUI interaction, notebook training and production deployment were not comprehensively exercised.
 
 ```bash
 python -m unittest discover -s tests -v
 ```
-
-### Repository description
-
-The short GitHub description is provided in [REPOSITORY_DESCRIPTION.md](REPOSITORY_DESCRIPTION.md).
 
 ### Contributions
 
